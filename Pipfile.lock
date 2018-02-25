@@ -1,0 +1,46 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "cc159b2fa745d4a645b30eaa7e42e0f8e9273305ba35e34c2e8436c8a793b2b7"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "3.5.2",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "4.4.0-43-Microsoft",
+            "platform_system": "Linux",
+            "platform_version": "#1-Microsoft Wed Dec 31 14:42:53 PST 2014",
+            "python_full_version": "3.5.2",
+            "python_version": "3.5",
+            "sys_platform": "linux"
+        },
+        "pipfile-spec": 6,
+        "requires": {},
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "required": {
+            "hashes": [
+                "sha256:82d201748e7dd2cff3c27d2bcf450d8e7b7996b43e76ec7201baaa9deb1943fe",
+                "sha256:685b0f969ef3a7444f7760f6a64d19c2a0a2bfcadd18158455084727037bb651"
+            ],
+            "version": "==0.3.3"
+        },
+        "six": {
+            "hashes": [
+                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb",
+                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+            ],
+            "version": "==1.11.0"
+        }
+    },
+    "develop": {}
+}
