@@ -113,6 +113,6 @@ def makeWebhookResult(req) :
     "source": "Default Welcome Intent"
     }
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8080))
+    port = int(os.getenv('PORT', 80))
     print ("Starting app on port %d" %(port))
     app.run(debug=True, port=port, host='0.0.0.0')
