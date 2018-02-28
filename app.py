@@ -36,12 +36,8 @@ def procesrequest(req) :
 
 
 def MakewebhookResultSheet(req) :
-    import gspread
-    from oauth2client.service_account import ServiceAccountCredentials
-    # use creds to create a client to interact with the Google Drive API
-    scope = ['https://spreadsheets.google.com/feeds']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-    client = gspread.authorize(creds)
+    import pygsheets
+    gc = pygsheets.authorize()
     result = req.get("result")
     parameters = result.get("parameters")
     portalname = parameters.get("PortalName")
@@ -65,10 +61,11 @@ def MakewebhookResultSheet(req) :
                )
     # Find a workbook by name and open the first sheet
     # Make sure you use the right name here.
-    sheet = client.open("ENL Portal reset Requests").sheet1
+    sh = gc.open("ENL Portal reset Requests")
+    wks = sh.sheet1
     row = [portalname,portallink,takeoutagent,dateofspoof,resonatorconfig,originalfaction,nowfaction,resetfaction]
-    index = 2
-    sheet.insert_row(row, index)
+    wks.index = 2
+    wks.insert_row(row=2, number=1, values="row")
     print("response:")
     print(speech)
     return{
@@ -113,6 +110,6 @@ def makeWebhookResult(req) :
     "source": "Default Welcome Intent"
     }
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 80))
+    port = int(os.getenv('PORT', 8080))
     print ("Starting app on port %d" %(port))
     app.run(debug=True, port=port, host='0.0.0.0')
